@@ -109,6 +109,12 @@ module SimpleGeo
         geojson_hash = get Endpoint.context(lat, lon)
         HashUtils.recursively_symbolize_keys geojson_hash
       end
+
+      def get_context_address(address)
+        geojson_hash = get Endpoint.context_address(address)
+        HashUtils.recursively_symbolize_keys geojson_hash
+      end
+
       
       # Required
       #   lat - The latitude of the point

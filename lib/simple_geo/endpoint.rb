@@ -39,6 +39,10 @@ module SimpleGeo
       def context(lat, lon)
         endpoint_url "context/#{lat},#{lon}.json", '1.0'
       end
+
+      def context_address(address)
+        endpoint_url "context/address.json?address=#{URI.escape(address)}", '1.0'
+      end
       
       def places(lat, lon, options)
         if options.empty?
